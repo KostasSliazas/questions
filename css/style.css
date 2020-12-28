@@ -132,7 +132,7 @@ h1 {
   display: block;
   margin: 1em;
 }
-
+#scor,
 #seco,
 #stat {
   color: var(--c3);
@@ -265,6 +265,7 @@ h1 {
 
 #mess.hide {
   opacity: 0;
+  visibility: hidden;
   z-index: -1;
   pointer-events: none;
   transform: scale(.1)
@@ -439,7 +440,9 @@ h1 {
 .btn::-moz-focus-inner {
   border: 0
 }
-
+.nno.sele {
+  opacity: 0.7
+}
 .nno {
   background-color: var(--colorNo);
   color: var(--c5)
