@@ -4,7 +4,7 @@
   'use strict'
   // variables
   const G = {
-    URL: 'https://opentdb.com/api.php?amount=5',
+    URL: 'https://opentdb.com/api.php?amount=33',
     fdata: {}, // fetched data variable
     SECONDS: 30, // time for questions to answer
     elems: {}, // all elements get by ids loader, button, getMainDiv, getQuestio, getMessage, starBtn, star, stat, seco, imag
