@@ -21,6 +21,7 @@
   --colorYE: #3a861f;
   --colorYD: #21530e;
   --colorNo: #a13648;
+  --colorNoSe:  #721b2a;
 }
 
 @-webkit-keyframes backgrnd {
@@ -441,7 +442,7 @@ h1 {
   border: 0
 }
 .nno.sele {
-  opacity: 0.7
+  background-color: var(--colorNoSe);
 }
 .nno {
   background-color: var(--colorNo);
