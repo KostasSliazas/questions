@@ -4,7 +4,7 @@
   'use strict'
   // variables
   const G = {
-    URL: 'https://opentdb.com/api.php?amount=33',
+    URL: 'https://opentdb.com/api.php?amount=3',
     fdata: {}, // fetched data variable
     SECONDS: 30, // time for questions to answer
     elems: {}, // all elements get by ids loader, button, getMainDiv, getQuestio, getMessage, starBtn, star, stat, seco, imag
@@ -18,13 +18,13 @@
     if (!readValue()[0]) { // read localStorage if there is none show message becouse it's string it will be NOT falsy
       G.elems.star.innerHTML = 'This game is using <a href="https://en.wikipedia.org/wiki/Web_storage#Local_and_session_storage" target="_blank" rel="noopener noreferrer">localStorage</a>.'
     }
+    updateStat()
+    G.quest = Number(readValue()[0]) || 0
+    G.score = Number(readValue()[1]) || 0
     if (G.quest > G.fdata.length) {
       G.quest = 0
       G.score = 0
     }
-    updateStat()
-    G.quest = Number(readValue()[0]) || 0
-    G.score = Number(readValue()[1]) || 0
     G.elems.starBtn.innerText = (G.quest > 0) ? 'continue' : 'start'
     G.elems.starBtn.addEventListener('click', start)
   }
@@ -117,6 +117,7 @@
       w.navigator.vibrate(100) // vibrate for wrong answer
     }
     G.elems.getQuestio.className = 'bg'
+    updateStat()
     nextQuest()
   }
   function checkIsAllAnswered () {
@@ -155,7 +156,6 @@
         addQuestions()
         setTimeout(show, 500)
         countdown()
-        updateStat()
       }
     }, 1500)
   }
