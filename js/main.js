@@ -4,7 +4,7 @@
   'use strict'
   // variables
   const G = {
-    URL: 'https://opentdb.com/api.php?amount=33',
+    URL: 'https://opentdb.com/api.php?amount=3',
     fdata: {}, // fetched data variable
     SECONDS: 30, // time for questions to answer
     elems: {}, // all elements get by ids loader, button, getMainDiv, getQuestio, getMessage, starBtn, star, stat, seco, imag
@@ -25,6 +25,7 @@
       G.score = 0
     }
     updateStat()
+    G.elems.scor.innerText = G.score
     G.elems.starBtn.innerText = (G.quest > 0) ? 'continue' : 'start'
     G.elems.starBtn.addEventListener('click', start)
   }
@@ -142,7 +143,7 @@
     G.SECONDS = 30
     G.quest++ // increase questions
     createItem(G.quest, G.score)
-    updateStat()
+    G.elems.scor.innerText = G.score
     setTimeout(() => {
       if (checkIsAllAnswered()) {
         remElements('img')
@@ -156,6 +157,7 @@
         addQuestions()
         setTimeout(show, 500)
         countdown()
+        updateStat()
       }
     }, 1500)
   }
@@ -227,7 +229,6 @@
   // statistics for questions numbers
   function updateStat () {
     G.elems.stat.innerText = Number(G.quest) + 1 + '/' + G.fdata.length
-    G.elems.scor.innerText = G.score
   }
 
   // helper function random for random stuff
