@@ -237,12 +237,6 @@ h1 {
   gap: 1em
 }
 
-#main .btn {
-  margin: 0 0 0 2em;
-  text-align: left;
-  overflow: auto;
-}
-
 #mess {
   height: 240px;
   width: 300px;
@@ -298,13 +292,19 @@ h1 {
   min-width: 10em;
 }
 
+#main .btn.tips {
+  text-align: left;
+  overflow: auto;
+  padding-left: 3.5em;
+}
+
 .tips {
   will-change: transform, background-color
 }
 
 .tips:before {
   position: absolute;
-  left: -2.1em;
+  left: 0;
   padding: 1em;
   top: 0;
   display: inline-block;
