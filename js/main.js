@@ -56,8 +56,8 @@
     hide.call(G.elems.getMessage) // hide message
     addQuestions()
     setTimeout(show, 500)
-    countdown()
     updateStat()
+    countdown()
     G.elems.getMainDiv.addEventListener('click', loopElems) // add event listener to answers
   }
 
@@ -84,6 +84,8 @@
 
   // when clicked answer load this function
   function loopElems (elem) {
+    clearTimeout(G.tim)
+    G.tim = 0
     // return false if not answer button
     if (!elem.target.classList.contains('tips')) return false
     // add class user selected answer
@@ -136,9 +138,7 @@
   }
 
   function nextQuest () {
-    clearTimeout(G.tim)
     G.SECONDS = 30
-    G.tim = 0
     G.quest++ // increase questions
     createItem(++readValue()[0], readValue()[1])
     setTimeout(() => {
@@ -201,6 +201,8 @@
         countdown()
       }, 1000)
     } else {
+      clearTimeout(G.tim)
+      G.tim = 0
       nextQuest()
     }
   }
