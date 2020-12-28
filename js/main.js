@@ -8,8 +8,8 @@
     fdata: {}, // fetched data variable
     SECONDS: 30, // time for questions to answer
     elems: {}, // all elements get by ids loader, button, getMainDiv, getQuestio, getMessage, starBtn, star, stat, seco, imag
-    quest: Number(readValue()[0]) || 0,
-    score: Number(readValue()[1]) || 0
+    quest: 0,
+    score: 0
   }
 
   function dataLoaded (data) {
@@ -18,6 +18,8 @@
     if (!readValue()[0]) { // read localStorage if there is none show message becouse it's string it will be NOT falsy
       G.elems.star.innerHTML = 'This game is using <a href="https://en.wikipedia.org/wiki/Web_storage#Local_and_session_storage" target="_blank" rel="noopener noreferrer">localStorage</a>.'
     }
+    G.quest = Number(readValue()[0]) || 0
+    G.score = Number(readValue()[1]) || 0
     if (G.quest > G.fdata.length) {
       G.quest = 0
       G.score = 0
