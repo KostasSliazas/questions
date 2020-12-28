@@ -4,7 +4,7 @@
   'use strict'
   // variables
   const G = {
-    URL: 'https://opentdb.com/api.php?amount=33',
+    URL: 'https://opentdb.com/api.php?amount=3',
     fdata: {}, // fetched data variable
     SECONDS: 30, // time for questions to answer
     elems: {}, // all elements get by ids loader, button, getMainDiv, getQuestio, getMessage, starBtn, star, stat, seco, imag
@@ -13,13 +13,9 @@
   }
 
   function dataLoaded (data) {
-    // set data to (d = document) as global variable
-    G.fdata = data.results
-    // when loaded data hide loader (spiner)
-    G.elems.loader.style.display = 'none'
-    // ALL things shoud be loaded to start the game UI
-    // read localStorage if there is none show message becouse it's string it will be NOT falsy
-    if (!readValue()[0]) {
+    G.fdata = data.results // set data to (d = document) as global variable
+    G.elems.loader.style.display = 'none' // when loaded data hide loader (spiner)
+    if (!readValue()[0]) { // read localStorage if there is none show message becouse it's string it will be NOT falsy
       G.elems.star.innerHTML = 'This game is using <a href="https://en.wikipedia.org/wiki/Web_storage#Local_and_session_storage" target="_blank" rel="noopener noreferrer">localStorage</a>.'
     }
     if (G.quest > G.fdata.length) {
@@ -30,7 +26,6 @@
     G.elems.starBtn.addEventListener('click', start)
   }
 
-  d.addEventListener('DOMContentLoaded', init.bind(G, this))
   function init () {
     const button = d.getElementById('starBtn')
     const getMainDiv = d.getElementById('main')
@@ -55,14 +50,14 @@
     this.elems = { scor, loader, button, getMainDiv, getQuestio, getMessage, starBtn, star, stat, seco, imag }
     starBtn.innerText = (G.quest > 0) ? 'continue' : 'start'
   }
+  d.addEventListener('DOMContentLoaded', init.bind(G, this))
 
   function start () {
-    // hide message
-    hide.call(G.elems.getMessage)
-    // add click eventlistener on main div for answer
+    hide.call(G.elems.getMessage) // hide message
     addQuestions()
     setTimeout(show, 500)
     countdown()
+    updateStat()
     G.elems.getMainDiv.addEventListener('click', loopElems) // add event listener to answers
   }
 
@@ -125,7 +120,7 @@
     if (G.quest === G.fdata.length) {
       G.elems.star.innerText = 'Your score: ' + G.score + '/' + G.fdata.length
       if (G.fdata.length === G.score) {
-        G.elems.star.innerText += '\nvictory'
+        G.elems.star.innerText += '\nvictory!'
         G.elems.starBtn.innerText = 'Repeat'
       } else {
         G.elems.starBtn.innerText = 'Improve'
