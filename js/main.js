@@ -4,7 +4,7 @@
   'use strict'
   // variables
   const G = {
-    URL: 'https://opentdb.com/api.php?amount=33',
+    URL: 'https://opentdb.com/api.php?amount=5',
     fdata: {}, // fetched data variable
     SECONDS: 30, // time for questions to answer
     elems: {}, // all elements get by ids loader, button, getMainDiv, getQuestio, getMessage, starBtn, star, stat, seco, imag
@@ -21,6 +21,10 @@
     // read localStorage if there is none show message becouse it's string it will be NOT falsy
     if (!readValue()[0]) {
       G.elems.star.innerHTML = 'This game is using <a href="https://en.wikipedia.org/wiki/Web_storage#Local_and_session_storage" target="_blank" rel="noopener noreferrer">localStorage</a>.'
+    }
+    if (G.quest > G.fdata.length) {
+      G.quest = 0
+      G.score = 0
     }
     G.elems.starBtn.addEventListener('click', start)
   }
