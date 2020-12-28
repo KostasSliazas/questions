@@ -18,13 +18,14 @@
     if (!readValue()[0]) { // read localStorage if there is none show message becouse it's string it will be NOT falsy
       G.elems.star.innerHTML = 'This game is using <a href="https://en.wikipedia.org/wiki/Web_storage#Local_and_session_storage" target="_blank" rel="noopener noreferrer">localStorage</a>.'
     }
-    G.quest = Number(readValue()[0]) || 0
-    G.score = Number(readValue()[1]) || 0
     if (G.quest > G.fdata.length) {
       G.quest = 0
       G.score = 0
     }
     updateStat()
+    G.quest = Number(readValue()[0]) || 0
+    G.score = Number(readValue()[1]) || 0
+    G.elems.starBtn.innerText = (G.quest > 0) ? 'continue' : 'start'
     G.elems.starBtn.addEventListener('click', start)
   }
 
@@ -50,7 +51,6 @@
     }
     // set elements scor, loader, button, getMainDiv, getQuestio, getMessage, starBtn, star, stat, seco, imag
     this.elems = { scor, loader, button, getMainDiv, getQuestio, getMessage, starBtn, star, stat, seco, imag }
-    starBtn.innerText = (G.quest > 0) ? 'continue' : 'start'
   }
   d.addEventListener('DOMContentLoaded', init.bind(G, this))
 
@@ -69,7 +69,7 @@
       incorrect_answers,
       correct_answer,
       question
-    } = G.fdata[Number(G.quest)] // destructure variables
+    } = G.fdata[G.quest] // destructure variables
     const ins = getRandomIntInclusive(0, incorrect_answers.length) // real answer ID
     G.trueA = 'id' + ins // the real answer variable
     const incorrect = [...incorrect_answers] // copy new array of incorect
@@ -110,14 +110,13 @@
       createItem(G.quest, G.score)
       sele.bind(answ)
       yyes.call(G.elems.getQuestio)
-      w.navigator.vibrate(30) // vibrate for true answer
+      w.navigator.vibrate(20) // vibrate for true answer
     } else {
       nno.call(G.elems.getQuestio)
       nno.bind(answ)
       w.navigator.vibrate(100) // vibrate for wrong answer
     }
     G.elems.getQuestio.className = 'bg'
-    updateStat()
     nextQuest()
   }
   function checkIsAllAnswered () {
@@ -142,7 +141,7 @@
   function nextQuest () {
     G.SECONDS = 30
     G.quest++ // increase questions
-    createItem(++readValue()[0], readValue()[1])
+    createItem(G.quest, G.score)
     setTimeout(() => {
       if (checkIsAllAnswered()) {
         remElements('img')
@@ -156,6 +155,7 @@
         addQuestions()
         setTimeout(show, 500)
         countdown()
+        updateStat()
       }
     }, 1500)
   }
@@ -262,7 +262,9 @@
     if (storageAvailable('localStorage')) {
       w.localStorage.setItem('Game-guestionaire-question', q)
       w.localStorage.setItem('Game-guestionaire-score', s)
-    } else console.log('No localstorage')
+    } else {
+      return false
+    }
   }
   // Local Storage read item
   function readValue () {
@@ -270,7 +272,9 @@
       const x = w.localStorage.getItem('Game-guestionaire-question')
       const a = w.localStorage.getItem('Game-guestionaire-score')
       return [x, a]
-    } else console.log('No localstorage')
+    } else {
+      return false
+    }
   }
   // Local Storage is Available
   function storageAvailable (type) {
