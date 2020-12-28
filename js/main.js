@@ -26,6 +26,7 @@
       G.quest = 0
       G.score = 0
     }
+    updateStat()
     G.elems.starBtn.addEventListener('click', start)
   }
 
@@ -56,18 +57,12 @@
   }
 
   function start () {
-    if (G.quest >= G.fdata.length) {
-      G.quest = 0
-      G.score = 0
-      createItem(0, 0) // set local storage score and quest 0
-    }
     // hide message
     hide.call(G.elems.getMessage)
     // add click eventlistener on main div for answer
     addQuestions()
     setTimeout(show, 500)
     countdown()
-    updateStat()
     G.elems.getMainDiv.addEventListener('click', loopElems) // add event listener to answers
   }
 
@@ -123,6 +118,7 @@
       w.navigator.vibrate(100) // vibrate for wrong answer
     }
     G.elems.getQuestio.className = 'bg'
+    updateStat()
     nextQuest()
   }
   function checkIsAllAnswered () {
@@ -163,7 +159,6 @@
         addQuestions()
         setTimeout(show, 500)
         countdown()
-        updateStat()
       }
     }, 1500)
   }
