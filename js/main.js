@@ -90,11 +90,6 @@
 
   // when clicked answer load this function
   function loopElems (elem) {
-    clearTimeout(G.tim)
-    G.SECONDS = 30
-    G.tim = 0
-    G.quest++ // increase questions
-    createItem(++readValue()[0], readValue()[1])
     // return false if not answer button
     if (!elem.target.classList.contains('tips')) return false
     // add class user selected answer
@@ -146,6 +141,11 @@
   }
 
   function nextQuest () {
+    clearTimeout(G.tim)
+    G.SECONDS = 30
+    G.tim = 0
+    G.quest++ // increase questions
+    createItem(++readValue()[0], readValue()[1])
     setTimeout(() => {
       if (checkIsAllAnswered()) {
         remElements('img')
