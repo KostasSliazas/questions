@@ -130,7 +130,7 @@ h1 {
 }
 
 #wrapstats {
-  margin: .5em 0 0;
+  margin: .5em 0;
 }
 
 #scor,
@@ -184,7 +184,7 @@ h1 {
   box-shadow: var(--BShadowS) var(--BShadowC1) var(--Binset), var(--BShadowS) var(--BShadowC2) var(--Binset), var(--BShadowS) var(--BShadowC3);
   background: radial-gradient(#834266 5%, transparent 80%), radial-gradient(ellipse at top, #000000, transparent) 0 0/1em 1em #111;
   display: block;
-  min-height: 104px;
+  min-height: 112px;
   position: relative
 }
 #imag, #seco {
