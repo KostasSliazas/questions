@@ -130,8 +130,7 @@ h1 {
 }
 
 #wrapstats {
-  display: block;
-  margin: 1em;
+  margin: .5em 0;
 }
 
 #scor,
@@ -143,7 +142,7 @@ h1 {
   z-index: 1;
   text-align: right;
   position: relative;
-  margin: 0.25em;
+  margin: 0.5em;
   position: absolute;
   top: 0;
   font-weight: 700;
@@ -185,20 +184,18 @@ h1 {
   box-shadow: var(--BShadowS) var(--BShadowC1) var(--Binset), var(--BShadowS) var(--BShadowC2) var(--Binset), var(--BShadowS) var(--BShadowC3);
   background: radial-gradient(#834266 5%, transparent 80%), radial-gradient(ellipse at top, #000000, transparent) 0 0/1em 1em #111;
   display: block;
+  min-height: 96px;
   position: relative
 }
 #imag, #seco {
   width: 100%;
-  display: flex;
-  align-content: center;
-  justify-content: center;
   color: var(--c2);
+  text-align: center;
   filter: drop-shadow(0 0 2px #000);
 }
 #seco {
   font-size: 3em;
   font-family: Numbers, Arial, Helvetica, sans-serif;
-  text-align: center;
 }
 .scale {
   min-height: 200px;
@@ -472,10 +469,6 @@ h1 {
 
   #ques {
     line-height: 3;
-  }
-
-  #wimg {
-    min-height: 120px;
   }
 
   #main {
