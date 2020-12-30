@@ -12,25 +12,9 @@
     score: 0
   }
 
-  function dataLoaded (data) {
-    G.fdata = data.results // set data to (d = document) as global variable
-    G.elems.loader.style.display = 'none' // when loaded data hide loader (spiner)
-    if (!readValue()[0]) { // read localStorage if there is none show message becouse it's string it will be NOT falsy
-      G.elems.star.innerHTML = 'This game is using <a href="https://en.wikipedia.org/wiki/Web_storage#Local_and_session_storage" target="_blank" rel="noopener noreferrer">localStorage</a>.'
-    }
-    G.quest = Number(readValue()[0]) || 0
-    G.score = Number(readValue()[1]) || 0
-    if (G.quest > G.fdata.length) {
-      G.quest = 0
-      G.score = 0
-    }
-    updateStat()
-    G.elems.scor.innerText = G.score
-    G.elems.starBtn.innerText = (G.quest > 0) ? 'continue' : 'start'
-    G.elems.starBtn.addEventListener('click', start)
-  }
-
+  d.addEventListener('DOMContentLoaded', init.bind(G, this))
   function init () {
+    getData() // get data from API
     const button = d.getElementById('starBtn')
     const getMainDiv = d.getElementById('main')
     const getQuestio = d.getElementById('ques')
@@ -53,7 +37,29 @@
     // set elements scor, loader, button, getMainDiv, getQuestio, getMessage, starBtn, star, stat, seco, imag
     this.elems = { scor, loader, button, getMainDiv, getQuestio, getMessage, starBtn, star, stat, seco, imag }
   }
-  d.addEventListener('DOMContentLoaded', init.bind(G, this))
+  function dataLoaded (data) {
+    G.fdata = data.results // set data to (d = document) as global variable
+    G.elems.loader.style.display = 'none' // when loaded data hide loader (spiner)
+    if (!readValue()[0]) { // read localStorage if there is none show message becouse it's string it will be NOT falsy
+      G.elems.star.innerHTML = 'This game is using <a href="https://en.wikipedia.org/wiki/Web_storage#Local_and_session_storage" target="_blank" rel="noopener noreferrer">localStorage</a>.'
+    }
+    G.quest = Number(readValue()[0]) || 0
+    G.score = Number(readValue()[1]) || 0
+    if (G.quest > G.fdata.length) {
+      G.quest = 0
+      G.score = 0
+    }
+    updateStat()
+    G.elems.scor.innerText = G.score
+    G.elems.starBtn.innerText = (G.quest > 0) ? 'continue' : 'start'
+    G.elems.starBtn.addEventListener('click', start)
+  }
+
+  async function getData () {
+    const res = await w.fetch(G.URL)
+    const json = await res.json()
+    dataLoaded(json)
+  }
 
   function start () {
     hide.call(G.elems.getMessage) // hide message
@@ -117,7 +123,6 @@
       nno.bind(answ)
       w.navigator.vibrate(100) // vibrate for wrong answer
     }
-    G.elems.getQuestio.className = 'bg'
     nextQuest()
   }
   function checkIsAllAnswered () {
@@ -149,6 +154,7 @@
         remElements('img')
         remElements('q')
         remElements('main')
+        G.elems.getQuestio.className = 'bg'
         return false
       } else {
         remElements('img')
@@ -158,6 +164,7 @@
         setTimeout(show, 500)
         countdown()
         updateStat()
+        G.elems.getQuestio.className = 'bg'
       }
     }, 1500)
   }
@@ -289,15 +296,16 @@
       return false
     }
   }
-  function CheckError (response) {
-    if (response.status >= 200 && response.status <= 299) {
-      return response.json()
-    } else {
-      throw Error(response.statusText)
-    }
-  }
+  // function CheckError (response) {
+  //   if (response.status >= 200 && response.status <= 299) {
+  //     return response.json()
+  //   } else {
+  //     throw Error(response.statusText)
+  //   }
+  // }
   // fetch data from URL
-  w.fetch(G.URL)
-    .then(CheckError)
-    .then((json) => dataLoaded(json))
+
+  // w.fetch(G.URL)
+  //   .then(CheckError)
+  //   .then((json) => dataLoaded(json))
 })(window, document)
