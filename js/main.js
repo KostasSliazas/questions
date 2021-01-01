@@ -4,7 +4,7 @@
   'use strict'
   // variables
   const G = {
-    URL: 'https://opentdb.com/api.php?amount=33',
+    URL: 'https://opentdb.com/api.php?amount=50',
     fdata: {}, // fetched data variable
     SECONDS: 30, // time for questions to answer
     elems: {}, // all elements get by ids loader, button, getMainDiv, getQuestio, getMessage, starBtn, star, stat, seco, imag
@@ -13,6 +13,7 @@
   }
 
   d.addEventListener('DOMContentLoaded', init.bind(G, this))
+
   function init () {
     getData() // get data from API
     const button = d.getElementById('starBtn')
@@ -35,8 +36,21 @@
       })(i)
     }
     // set elements scor, loader, button, getMainDiv, getQuestio, getMessage, starBtn, star, stat, seco, imag
-    this.elems = { scor, loader, button, getMainDiv, getQuestio, getMessage, starBtn, star, stat, seco, imag }
+    this.elems = {
+      scor,
+      loader,
+      button,
+      getMainDiv,
+      getQuestio,
+      getMessage,
+      starBtn,
+      star,
+      stat,
+      seco,
+      imag
+    }
   }
+
   function dataLoaded (data) {
     G.fdata = data.results // set data to (d = document) as global variable
     G.elems.loader.style.display = 'none' // when loaded data hide loader (spiner)
@@ -45,10 +59,7 @@
     }
     G.quest = Number(readValue()[0]) || 0
     G.score = Number(readValue()[1]) || 0
-    if (G.quest > G.fdata.length) {
-      G.quest = 0
-      G.score = 0
-    }
+    checkIsAllAnswered()
     updateStat()
     G.elems.scor.innerText = G.score
     G.elems.starBtn.innerText = (G.quest > 0) ? 'continue' : 'start'
@@ -67,6 +78,7 @@
     setTimeout(show, 500)
     updateStat()
     countdown()
+    G.elems.scor.innerText = G.score
     G.elems.getMainDiv.addEventListener('click', loopElems) // add event listener to answers
   }
 
@@ -93,10 +105,10 @@
 
   // when clicked answer load this function
   function loopElems (elem) {
-    clearTimeout(G.tim)
-    G.tim = 0
     // return false if not answer button
     if (!elem.target.classList.contains('tips')) return false
+    clearTimeout(G.tim) // reset timeout
+    G.tim = 0
     // add class user selected answer
     sele.call(elem.target)
 
@@ -125,6 +137,7 @@
     }
     nextQuest()
   }
+
   function checkIsAllAnswered () {
     if (G.quest === G.fdata.length) {
       G.elems.star.innerText = 'Your score: ' + G.score + '/' + G.fdata.length
@@ -135,9 +148,9 @@
         G.elems.starBtn.innerText = 'Improve'
       }
       // set reset all stuff
+      createItem(0, 0)
       G.quest = 0
       G.score = 0
-      createItem(0, 0)
       G.elems.getMessage.classList.remove('hide')
       return true
     }
@@ -217,6 +230,7 @@
       nextQuest()
     }
   }
+
   function CreateElem (e, className, id, text) {
     if (!(this instanceof CreateElem)) return new CreateElem(e, className, id)
     e = document.createElement(e)
