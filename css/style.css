@@ -29,11 +29,11 @@
 }
 
 :root {
-  --c1: #644e5c;
-  --c2: #996e84;
-  --c3: #a5949d;
-  --c4: #e7e7e7;
-  --c5: #d9dbf1;
+  --c1: #2B2324;
+  --c2: #7D4960;
+  --c3: #D58BB2;
+  --c4: #E1C7D5;
+  --c5: #E8E1D8;
   --Display: none;
   --BRadius: 10px;
   --BRadius2: 30px;
@@ -51,7 +51,7 @@
   --colorYE: #145000;
   --colorYD: #326e1e;
   --colorNo: #963232;
-  --colorNoSe: #781414
+  --colorNoSe: #781414;
 }
 
 @font-face {
@@ -118,10 +118,10 @@ html {
 
 body {
   background: var(--c1);
-  background: radial-gradient(circle, var(--c4) 5%, var(--c1) 80%);
   font: 16px/1.5 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   font-weight: 400;
-  overflow-x: hidden
+  overflow-x: hidden;
+  background: radial-gradient(ellipse farthest-side at center center, var(--c5) 3%, var(--c2) 41%, var(--c1) 100%);
 }
 
 .tips:before,
