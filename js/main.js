@@ -77,12 +77,12 @@
     addQuestions()
     setTimeout(show, 500)
     updateStat()
-    countdown()
     G.elems.scor.innerText = G.score
-    G.elems.getMainDiv.addEventListener('click', loopElems) // add event listener to answers
   }
 
   function addQuestions () {
+    clearTimeout(G.tim) // clear timout on click so it's freeze (stops) timer
+    countdown(G.SECONDS)
     const {
       category,
       incorrect_answers,
@@ -101,18 +101,18 @@
     G.elems.imag.innerText = category // category add
     const qu = new CreateElem('div', 'q', 'q', decodeEntities(question)) // questions adding
     G.elems.getQuestio.appendChild(qu)
+    G.elems.getMainDiv.addEventListener('click', loopElems) // add event listener to answers
   }
 
   // when clicked answer load this function
   function loopElems (elem) {
     // return false if not answer button
     if (!elem.target.classList.contains('tips')) return false
-    clearTimeout(G.tim) // reset timeout
-    G.tim = 0
-    // add class user selected answer
-    sele.call(elem.target)
+    clearTimeout(G.tim)
+    sele.call(elem.target) // add class user selected answer
+    G.elems.getMainDiv.removeEventListener('click', loopElems) // remove event listener to answers
 
-    const getAllansw = [...document.getElementsByClassName('tips')]
+    const getAllansw = [...document.getElementsByClassName('tips')] // loop elements and add classes
     getAllansw.forEach(element => {
       if (element.id !== G.trueA) {
         nno.call(element)
@@ -139,7 +139,7 @@
   }
 
   function checkIsAllAnswered () {
-    if (G.quest === G.fdata.length) {
+    if (G.quest >= G.fdata.length) {
       G.elems.star.innerText = 'Your score: ' + G.score + '/' + G.fdata.length
       if (G.fdata.length === G.score) {
         G.elems.star.innerText += '\nvictory!'
@@ -158,7 +158,6 @@
   }
 
   function nextQuest () {
-    G.SECONDS = 30
     G.quest++ // increase questions
     createItem(G.quest, G.score)
     G.elems.scor.innerText = G.score
@@ -175,7 +174,6 @@
         remElements('main')
         addQuestions()
         setTimeout(show, 500)
-        countdown()
         updateStat()
         G.elems.getQuestio.className = 'bg'
       }
@@ -217,18 +215,19 @@
     }
   }
 
-  // Countdown time for one questions
-  function countdown () {
-    G.elems.seco.innerText = G.SECONDS
-    if (--G.SECONDS > 0) {
-      G.tim = setTimeout(() => {
-        countdown()
-      }, 1000)
-    } else {
+  // Count time for one questions
+  const countdown = (seconds) => {
+    (function inner () {
+      G.elems.seco.innerText = seconds
       clearTimeout(G.tim)
-      G.tim = 0
-      nextQuest()
-    }
+      if (--seconds >= 0) {
+        G.tim = setTimeout(inner, 1000)
+      }
+      if (seconds === -1) {
+        G.elems.getMainDiv.removeEventListener('click', loopElems) // remove event listener to answers
+        nextQuest()
+      }
+    })()
   }
 
   function CreateElem (e, className, id, text) {
