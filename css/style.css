@@ -30,19 +30,15 @@
 
 :root {
   --c1: #2B2324;
-  --c2: #7D4960;
-  --c3: #D58BB2;
-  --c4: #E1C7D5;
-  --c5: #E8E1D8;
-  --Display: none;
+  --c2: #7D4966;
+  --c3: #D58BA7;
+  --c4: #EEE;
+  --c5: #D9D9D9;
   --BRadius: 10px;
   --BRadius2: 30px;
-  --BShadowS: 0 0 0 1px;
-  --BShadowC1: var(--c3);
-  --BShadowC2: var(--c2);
-  --BShadowC3: var(--c1);
-  --BShadowC4: 0 0 2px 2px rgba(0, 0, 0, 0.8);
-  --Binset: inset;
+  --BShadowC1: 0 0 0 1px var(--c1);
+  --BShadowC2: 0 0 0 1px var(--c3) inset;
+  --BShadowC3: 0 0 2px 2px rgba(0, 0, 0, 0.3);
   --H1color: var(--c5);
   --BgColor1: var(--c1);
   --BgColor2: var(--c4);
@@ -161,7 +157,7 @@ h1 {
 }
 
 .stuf {
-  background: linear-gradient(to top, var(--c1) 0%, var(--c3) 100%)
+  background: var(--c2) url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAAHklEQVQImWNgIAacPHmSA86RlZVVQJE9f/58EkEjABqpBaoYNBP1AAAAAElFTkSuQmCC')
 }
 
 #wimg,
@@ -185,12 +181,10 @@ h1 {
   min-height: max-content;
   overflow-x: hidden;
   height: 100%;
-  box-shadow: var(--BShadowS) var(--BShadowC1) var(--Binset), var(--BShadowS) var(--BShadowC2) var(--Binset), var(--BShadowS) var(--BShadowC3), var(--BShadowC4)
 }
 
 #wimg {
   overflow: hidden;
-  box-shadow: var(--BShadowS) var(--BShadowC1) var(--Binset), var(--BShadowS) var(--BShadowC2) var(--Binset), var(--BShadowS) var(--BShadowC3)
 }
 
 #imag,
@@ -227,7 +221,6 @@ h1 {
   font-weight: 700;
   display: block;
   width: 100%;
-  box-shadow: var(--BShadowS) var(--BShadowC1) var(--Binset), var(--BShadowS) var(--BShadowC2) var(--Binset), var(--BShadowS) var(--BShadowC3);
   z-index: 1;
   padding: 0 .5em
 }
@@ -235,7 +228,7 @@ h1 {
 #main {
   display: -ms-grid;
   display: grid;
-  grid-template-columns: repeat(1, 1fr);
+  grid-template-columns: 1fr;
   -webkit-align-content: center;
   -ms-flex-line-pack: center;
   align-content: center;
@@ -243,6 +236,7 @@ h1 {
   -webkit-align-items: center;
   -ms-flex-align: center;
   align-items: center;
+  align-items: baseline;
   padding: 1em;
   gap: 1em
 }
@@ -264,7 +258,6 @@ h1 {
   margin-top: -120px;
   -webkit-border-radius: var(--BRadius2);
   border-radius: var(--BRadius2);
-  box-shadow: var(--BShadowS) var(--BShadowC1) var(--Binset);
   z-index: 9;
   transition: all .2s;
   border: 10px solid transparent;
@@ -412,11 +405,21 @@ h1 {
   color: var(--BtnHoCol)
 }
 
+a {
+  color: var(--c2);
+  text-decoration: none;
+}
+
+a:hover,
+a:active,
+a:focus {
+  color: var(--c1)
+}
+
 .btn {
   cursor: pointer;
   position: relative;
   display: inline-block;
-  box-shadow: var(--BShadowS) var(--BShadowC1) var(--Binset), var(--BShadowS) var(--BShadowC2) var(--Binset), var(--BShadowS) var(--BShadowC3);
   -webkit-border-radius: var(--BRadius);
   border-radius: var(--BRadius);
   overflow: hidden;
@@ -472,6 +475,19 @@ h1 {
   color: var(--c5)
 }
 
+.footer {
+  text-align: center;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  display: block;
+  width: 100%;
+  background: var(--BtnHover);
+  font-size: 12px;
+}
+.btn, .footer, #mess, #ques, #wrap {
+  box-shadow: var(--BShadowC1), var(--BShadowC2), var(--BShadowC3);
+}
 @media screen and (min-width:768px) {
   #wrap {
     width: 750px
@@ -482,6 +498,6 @@ h1 {
   }
 
   #main {
-    grid-template-columns: repeat(2, 1fr)
+    grid-template-columns: 1fr 1fr
   }
 }
