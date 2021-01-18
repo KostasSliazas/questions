@@ -185,6 +185,7 @@ h1 {
 
 #wimg {
   overflow: hidden;
+  background-color: rgba(255,255,255,.3);
 }
 
 #imag,
@@ -262,6 +263,7 @@ h1 {
   transition: all .2s;
   border: 10px solid transparent;
   overflow: hidden;
+  background-color: rgba(255,255,255,.3);
   background-clip: content-box
 }
 
@@ -406,14 +408,14 @@ h1 {
 }
 
 a {
-  color: var(--c2);
+  color: var(--c1);
   text-decoration: none;
 }
 
 a:hover,
 a:active,
 a:focus {
-  color: var(--c1)
+  color: var(--c2)
 }
 
 .btn {
