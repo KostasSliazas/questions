@@ -31,7 +31,7 @@
 :root {
   --c1: #292928;
   --c2: #62546d;
-  --c3: #c3c2c5;
+  --c3: #afaab1;
   --c4: #dad7d6;
   --c5: #EBECED;
   --BRadius: 10px;
@@ -217,7 +217,6 @@ h1 {
 #ques {
   min-height: 1em;
   text-align: center;
-  font-weight: 700;
   display: block;
   width: 100%;
   z-index: 1;
@@ -505,7 +504,7 @@ a:focus {
   }
 
   #ques {
-    line-height: 3
+    line-height: 2
   }
 
   #main {
