@@ -497,7 +497,7 @@ a:visited {
   #wrap {
     border-radius: var(--BRadius);
     height: auto;
-    min-height: 50%;
+    min-height: 60%;
     width: 750px
   }
 
