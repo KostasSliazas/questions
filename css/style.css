@@ -113,7 +113,7 @@ html {
 }
 
 body {
-  color: var(--c3);
+  color: var(--c1);
   font: 16px/1.5 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   overflow-x: hidden;
   background: radial-gradient(ellipse farthest-side at center center, var(--c2) 0%, var(--c1) 100%);
@@ -411,7 +411,7 @@ h1 {
 }
 
 a {
-  color: var(--c3);
+  color: var(--c1);
   text-decoration: none;
 }
 
@@ -419,7 +419,7 @@ a:visited,
 a:hover,
 a:active,
 a:focus {
-  color: var(--c3)
+  color: var(--c1)
 }
 
 .btn {
