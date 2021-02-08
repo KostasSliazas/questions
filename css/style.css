@@ -412,13 +412,13 @@ h1 {
 
 a {
   color: var(--c1);
-  text-decoration: none;
+  text-decoration: none
 }
 
-a:visited,
-a:hover,
 a:active,
-a:focus {
+a:focus,
+a:hover,
+a:visited {
   color: var(--c1)
 }
 
