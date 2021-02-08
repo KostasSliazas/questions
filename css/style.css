@@ -29,20 +29,20 @@
 }
 
 :root {
-  --c1: #292928;
-  --c2: #62546d;
-  --c3: #ceccb3;
-  --c4: #dad9d6;
-  --c5: #EBECED;
+  --c1: #667292;
+  --c2: #8d9db6;
+  --c3: #FFF;
+  --c4: #f1e3dd;
+  --c5: #bccad6;
   --BRadius: 10px;
   --BRadius2: 30px;
   --BShadowC1: 0 0 0 1px var(--c1);
-  --BShadowC2: 0 0 0 1px var(--c3) inset;
+  --BShadowC2: 0 0 0 1px var(--c5) inset;
   --BShadowC3: 0 0 2px 2px rgba(0, 0, 0, 0.3);
   --H1color: var(--c5);
   --BgColor1: var(--c1);
-  --BgColor2: var(--c4);
-  --BtnHover: var(--c4);
+  --BgColor2: var(--c5);
+  --BtnHover: var(--c5);
   --BtnHoCol: var(--c1);
   --colorYE: #145000;
   --colorYD: #326e1e;
@@ -113,7 +113,7 @@ html {
 }
 
 body {
-  background: var(--c1);
+  color: var(--c1);
   font: 16px/1.5 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   font-weight: 400;
   overflow-x: hidden;
@@ -174,11 +174,8 @@ h1 {
   user-select: none;
   -webkit-appearance: none;
   -moz-appearance: none;
-  min-height: -webkit-max-content;
-  min-height: -moz-max-content;
-  min-height: max-content;
-  overflow-x: hidden;
   height: 100%;
+  overflow-x: hidden;
 }
 
 #wimg {
@@ -210,10 +207,6 @@ h1 {
   position: relative
 }
 
-#main {
-  overflow: hidden
-}
-
 #ques {
   min-height: 1em;
   text-align: center;
@@ -226,6 +219,7 @@ h1 {
 #main {
   display: -ms-grid;
   display: grid;
+  min-height: 144px;
   grid-template-columns: 1fr;
   -webkit-align-content: center;
   -ms-flex-line-pack: center;
@@ -235,7 +229,8 @@ h1 {
   -ms-flex-align: center;
   align-items: center;
   align-items: baseline;
-  padding: 1em;
+  padding: 1em 1em 3em;
+  overflow: hidden;
   gap: 1em
 }
 
@@ -408,11 +403,11 @@ a {
   color: var(--c1);
   text-decoration: none;
 }
-
+a:visited,
 a:hover,
 a:active,
 a:focus {
-  color: var(--c2)
+  color: var(--c1)
 }
 
 .btn {
@@ -480,12 +475,11 @@ a:focus {
 
 .footer {
   text-align: center;
+  display: block;
   position: absolute;
   bottom: 0;
   left: 0;
-  display: block;
   width: 100%;
-  background: var(--BtnHover);
   font-size: 12px;
 }
 
@@ -499,7 +493,14 @@ a:focus {
 }
 
 @media screen and (min-width:768px) {
+  body{
+    display: flex;
+    align-items: center;
+  }
   #wrap {
+    border-radius: var(--BRadius);
+    height: auto;
+    min-height: 50%;
     width: 750px
   }
 
