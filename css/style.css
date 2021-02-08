@@ -29,11 +29,11 @@
 }
 
 :root {
-  --c1: #59627c;
-  --c2: #8d9db6;
+  --c1: #513a4e;
+  --c2: #b68d9a;
   --c3: #FFF;
   --c4: #f1e3dd;
-  --c5: #bccad6;
+  --c5: #c4bcd6;
   --BRadius: 10px;
   --BRadius2: 30px;
   --BShadowC1: 0 0 0 1px var(--c1);
@@ -249,7 +249,7 @@ h1 {
   border-radius: var(--BRadius2);
   z-index: 9;
   transition: all .2s;
-  border: 10px solid var(--c3);
+  border: 10px solid var(--c1);
   overflow: hidden;
   background-color: var(--c2);
   background-clip: content-box
@@ -309,7 +309,6 @@ h1 {
   display: inline-block;
   font-size: inherit;
   border-radius: var(--BRadius);
-  background: var(--c4);
   font-weight: 700;
   box-shadow: inherit
 }
@@ -397,7 +396,8 @@ a {
 
 .bg,
 .btn {
-  background: var(--c3)
+  background: linear-gradient(to top, var(--c1) 0%, var(--c2) 100%);
+  color: var(--c5)
 }
 
 a {
@@ -429,8 +429,8 @@ a:visited {
 .btn:focus:enabled,
 .btn:hover:enabled,
 .btn:hover:enabled::before {
-  background: linear-gradient(to top, var(--c1) 0%, var(--c2) 100%);
-  color: var(--c5)
+  background: linear-gradient(to top, var(--c1) 0%, var(--c5) 100%);
+  color: var(--c3)
 }
 
 .btn:focus {
@@ -446,18 +446,18 @@ a:visited {
 }
 
 .nno.sele {
-  background-color: var(--colorNoSe)
+  background: var(--colorNoSe)
 }
 
 .nno,
 .nno.tips:before {
-  background-color: var(--colorNo);
+  background: var(--colorNo);
   color: var(--c5)
 }
 
 .yyes,
 .yyes.tips:before {
-  background-color: var(--colorYE);
+  background: var(--colorYE);
   color: var(--c5)
 }
 
