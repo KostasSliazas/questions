@@ -113,7 +113,7 @@ html {
 }
 
 body {
-  color: var(--c1);
+  color: var(--c3);
   font: 16px/1.5 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   font-weight: 400;
   overflow-x: hidden;
@@ -182,7 +182,7 @@ h1 {
   overflow: hidden;
   filter: drop-shadow(0 0 1px #000);
   background-color: rgba(0,0,0,.2);
-  color: var(--c3);
+  color: var(--c5);
 }
 
 #imag,
@@ -400,14 +400,14 @@ h1 {
 }
 
 a {
-  color: var(--c1);
+  color: var(--c3);
   text-decoration: none;
 }
 a:visited,
 a:hover,
 a:active,
 a:focus {
-  color: var(--c1)
+  color: var(--c3)
 }
 
 .btn {
