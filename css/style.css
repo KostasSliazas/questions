@@ -230,7 +230,12 @@ h1 {
   align-items: baseline;
   padding: 1em 1em 3em;
   overflow: hidden;
-  gap: 1em
+  gap: 1em;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 #mess,
@@ -418,11 +423,6 @@ a:visited {
   border-radius: var(--BRadius);
   overflow: hidden;
   padding: 1em;
-  -webkit-touch-callout: none;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
   -webkit-appearance: none;
   -moz-appearance: none;
   border: 0;
