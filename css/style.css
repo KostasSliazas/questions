@@ -249,7 +249,7 @@ h1 {
   border-radius: var(--BRadius2);
   z-index: 9;
   transition: all .2s;
-  border: 10px solid var(--c1);
+  border: 10px solid var(--c2);
   overflow: hidden;
   background-color: var(--c2);
   background-clip: content-box
