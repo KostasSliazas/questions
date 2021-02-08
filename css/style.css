@@ -29,11 +29,11 @@
 }
 
 :root {
-  --c1: #513a4e;
-  --c2: #b68d9a;
+  --c1: #0a050b;
+  --c2: #765786;
   --c3: #FFF;
-  --c4: #f1e3dd;
-  --c5: #c4bcd6;
+  --c4: #7f648d;
+  --c5: #c59bda;
   --BRadius: 10px;
   --BRadius2: 30px;
   --BShadowC1: 0 0 0 1px var(--c1);
@@ -396,7 +396,7 @@ a {
 
 .bg,
 .btn {
-  background: linear-gradient(to top, var(--c1) 0%, var(--c2) 100%);
+  background: linear-gradient(to top, var(--c1) 0, var(--c2) 100%);
   color: var(--c5)
 }
 
@@ -462,7 +462,7 @@ a:visited {
 }
 
 #header {
-  color: var(--c3)
+  color: var(--c5)
 }
 
 .footer {
