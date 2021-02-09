@@ -29,11 +29,11 @@
 }
 
 :root {
-  --c1: #302331;
+  --c1: #1a1417;
   --c2: #574858;
   --c3: #dbcadc;
   --c4: #807181;
-  --c5: #ad9cae;
+  --c5: #d9c0db;
   --BRadius: 10px;
   --BRadius2: 30px;
   --BShadowC1: 0 0 0 1px var(--c1);
