@@ -111,6 +111,16 @@ html {
   height: 100%
 }
 
+html {
+  scrollbar-width: thin;
+  text-rendering: optimizeLegibility;
+  font-variant-ligatures: none;
+  text-shadow: rgba(0, 0, 0, 0.05) 0 0 1px;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  -webkit-font-variant-ligatures: none;
+}
+
 body {
   color: var(--c1);
   font: 16px/1.5 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -125,6 +135,7 @@ h1 {
 }
 
 h1 {
+  text-shadow: rgb(57, 59, 68) 0px 1px 0px, rgba(57, 59, 68, 0.9) 0px 2px 0px, rgba(57, 59, 68, 0.8) 0px 3px 0px, rgba(57, 59, 68, 0.7) 0px 4px 0px, rgba(57, 59, 68, 0.6) 0px 5px 0px, rgba(57, 59, 68, 0.5) 0px 6px 0px, rgba(57, 59, 68, 0.4) 0px 7px 0px;color: #f1f3f8;
   font-size: 1em
 }
 
@@ -137,7 +148,7 @@ h1 {
 #stat {
   line-height: 1;
   letter-spacing: .1em;
-  font-weight: 100;
+  font-weight: 300;
   z-index: 1;
   text-align: right;
   margin: .5em;
@@ -493,7 +504,7 @@ a:visited {
   #wrap {
     border-radius: var(--BRadius);
     height: auto;
-    min-height: 60%;
+    min-height: 50%;
     width: 550px
   }
 
