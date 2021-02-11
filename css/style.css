@@ -44,10 +44,10 @@
   --BgColor2: var(--c5);
   --BtnHover: var(--c5);
   --BtnHoCol: var(--c1);
-  --colorYE: #145000;
-  --colorYD: #326e1e;
-  --colorNo: #963232;
-  --colorNoSe: #781414
+  --colorYE: #649F3B;
+  --colorYD: #455938;
+  --colorNo: #A33C58;
+  --colorNoSe: #5B3942
 }
 
 @font-face {
@@ -434,7 +434,7 @@ a {
 .btn:focus:enabled,
 .btn:hover:enabled,
 .btn:hover:enabled::before {
-  background: linear-gradient(to top, var(--c4) 90%, var(--c5) 100%);
+  background: linear-gradient(to top, var(--c4) 90%, var(--c3) 100%);
   color: var(--c1)
 }
 
@@ -457,17 +457,15 @@ a {
 .nno,
 .nno.tips:before {
   background: var(--colorNo);
-  color: var(--c5)
 }
 
 .yyes,
 .yyes.tips:before {
   background: var(--colorYE);
-  color: var(--c5)
 }
 
 #header {
-  color: var(--c5)
+  color: var(--c3)
 }
 
 .footer {
