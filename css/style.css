@@ -29,11 +29,11 @@
 }
 
 :root {
-  --c1: #393b44;
-  --c2: #8d93ab;
+  --c1: #0C0C0C;
+  --c2: #636042;
   --c3: #fff;
-  --c4: #d6e0f0;
-  --c5: #f1f3f8;
+  --c4: #B4A843;
+  --c5: #FFE500;
   --BRadius: 10px;
   --BRadius2: 30px;
   --BShadowC1: 0 0 0 1px var(--c1);
@@ -400,28 +400,21 @@ h1 {
 }
 
 .bg,
-.btn,
+.btn {
+  background: var(--c1);
+  color: var(--c4)
+}
+
 a {
-  color: var(--c1)
+  color: var(--c3);
+  outline: 0;
+  text-decoration: none
 }
 
 .bg,
 .btn {
-  background: linear-gradient(to top, var(--c1) 90%, var(--c4) 100%);
-  color: var(--c5)
+  color: var(--c3)
 }
-
-a {
-  text-decoration: none
-}
-
-a:active,
-a:focus,
-a:hover,
-a:visited {
-  color: var(--c1)
-}
-
 .btn {
   cursor: pointer;
   position: relative;
@@ -430,6 +423,7 @@ a:visited {
   border-radius: var(--BRadius);
   overflow: hidden;
   padding: 1em;
+  font-size: 1em;
   -webkit-appearance: none;
   -moz-appearance: none;
   border: 0;
@@ -483,6 +477,7 @@ a:visited {
   bottom: 0;
   left: 0;
   width: 100%;
+  color: var(--c3);
   font-size: 12px
 }
 
