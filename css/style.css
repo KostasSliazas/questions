@@ -29,11 +29,11 @@
 }
 
 :root {
-  --c1: #0C0C0C;
-  --c2: #633d54;
-  --c3: #c5c7bd;
-  --c4: #924775;
-  --c5: #eb9ccb;
+  --c1: #001633;
+  --c2: #082953;
+  --c3: #CACACA;
+  --c4: #325076;
+  --c5: #6F8198;
   --BRadius: 10px;
   --BRadius2: 30px;
   --BShadowC1: 0 0 0 1px var(--c1);
@@ -44,10 +44,10 @@
   --BgColor2: var(--c5);
   --BtnHover: var(--c5);
   --BtnHoCol: var(--c1);
-  --colorYE: #2e6429;
-  --colorYD: #314d2e;
-  --colorNo: #50243e;
-  --colorNoSe: #20161c;
+  --colorYE: #687A02;
+  --colorYD: #404C00;
+  --colorNo: #7E0B02;
+  --colorNoSe: #4E0600;
 }
 
 @font-face {
@@ -497,8 +497,7 @@ a {
 
   #wrap {
     border-radius: var(--BRadius);
-    height: auto;
-    min-height: 50%;
+    max-height: 80%;
     width: 550px
   }
 
