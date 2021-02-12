@@ -30,7 +30,7 @@
 
 :root {
   --c1: #001633;
-  --c2: #082953;
+  --c2: #6F8198;
   --c3: #CACACA;
   --c4: #325076;
   --c5: #6F8198;
@@ -436,7 +436,6 @@ a {
 .btn:hover:enabled,
 .btn:hover:enabled::before {
   background: linear-gradient(to top, var(--c4) 90%, var(--c3) 100%);
-  color: var(--c1)
 }
 
 .btn:focus {
