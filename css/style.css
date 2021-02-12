@@ -30,10 +30,10 @@
 
 :root {
   --c1: #0C0C0C;
-  --c2: #636042;
+  --c2: #634256;
   --c3: #fff;
-  --c4: #B4A843;
-  --c5: #FFE500;
+  --c4: #B44388;
+  --c5: #eb9ccb;
   --BRadius: 10px;
   --BRadius2: 30px;
   --BShadowC1: 0 0 0 1px var(--c1);
@@ -44,10 +44,10 @@
   --BgColor2: var(--c5);
   --BtnHover: var(--c5);
   --BtnHoCol: var(--c1);
-  --colorYE: #649F3B;
-  --colorYD: #455938;
-  --colorNo: #A33C58;
-  --colorNoSe: #5B3942
+  --colorYE: #51BB46;
+  --colorYD: #578952;
+  --colorNo: #B44388;
+  --colorNoSe: #634256
 }
 
 @font-face {
