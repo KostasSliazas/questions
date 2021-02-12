@@ -30,9 +30,9 @@
 
 :root {
   --c1: #0C0C0C;
-  --c2: #634256;
+  --c2: #633d54;
   --c3: #fff;
-  --c4: #B44388;
+  --c4: #924775;
   --c5: #eb9ccb;
   --BRadius: 10px;
   --BRadius2: 30px;
@@ -82,7 +82,7 @@
   font-family: 'Courier New', Courier, monospace;
   font-size: 12px;
   line-height: 24px;
-  color: var(--c4);
+  color: var(--c3);
   z-index: 999
 }
 
