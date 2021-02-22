@@ -416,7 +416,7 @@ h1 {
 .bg,
 .btn {
   background: var(--c1);
-  color: var(--c4)
+  color: var(--c3)
 }
 
 .footer,
@@ -438,7 +438,7 @@ a {
   -webkit-appearance: none;
   -moz-appearance: none;
   border: 0;
-  color: var(--c4);
+  color: var(--c3);
   text-decoration: none;
   -webkit-tap-highlight-color: transparent
 }
