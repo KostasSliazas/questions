@@ -182,7 +182,7 @@ h1 {
 }
 
 .stuf {
-  background: var(--c2) url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAcAAAAMCAMAAACZS1ciAAAAOVBMVEUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAC8dlA9AAAAE3RSTlMAAQMNFBUXGSAiIycpKy0uMjo+rZcATgAAADNJREFUCNdj4GIAAVYGTjDNAqch4uwMPByMDEwCggwMzLx8QmxgQX4GCOBGoyHiUHVQfQA0SAFL4kqtzgAAAABJRU5ErkJggg==)
+  background: var(--c3) url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAcAAAAMCAMAAACZS1ciAAAAOVBMVEUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAC8dlA9AAAAE3RSTlMAAQMNFBUXGSAiIycpKy0uMjo+rZcATgAAADNJREFUCNdj4GIAAVYGTjDNAqch4uwMPByMDEwCggwMzLx8QmxgQX4GCOBGoyHiUHVQfQA0SAFL4kqtzgAAAABJRU5ErkJggg==)
 }
 
 #wimg,
@@ -205,8 +205,8 @@ h1 {
 
 #wimg {
   overflow: hidden;
-  filter: drop-shadow(0 0 1px #000);
-  color: var(--c5)
+  filter: drop-shadow(0 0 1px #fff);
+  color: var(--c1)
 }
 
 #imag,
@@ -226,18 +226,13 @@ h1 {
   min-height: 200px
 }
 
-#main,
-#ques {
-  position: relative
-}
-
 #ques {
   min-height: 1em;
   text-align: center;
   display: block;
   width: 100%;
   z-index: 1;
-  padding: 0 .5em
+  padding: 1em .5em
 }
 
 #main {
@@ -434,7 +429,6 @@ a {
   display: inline-block;
   -webkit-border-radius: var(--BRadius);
   border-radius: var(--BRadius);
-  overflow: hidden;
   padding: 1em;
   font-size: 1em;
   -webkit-appearance: none;
@@ -479,7 +473,8 @@ a {
 }
 
 #header {
-  color: var(--c3)
+  color: var(--c3);
+  background: var(--c1);
 }
 
 .footer {
