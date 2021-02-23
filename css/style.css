@@ -233,6 +233,7 @@ h1 {
   display: block;
   width: 100%;
   z-index: 1;
+  position: relative;
   padding: 1em .5em
 }
 
@@ -301,8 +302,7 @@ h1 {
 #star {
   display: block;
   padding: 2em;
-  color: var(--c3);
-  font-weight: inherit
+  font-weight: 900;
 }
 
 #starBtn,
