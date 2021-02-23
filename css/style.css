@@ -274,7 +274,6 @@ h1 {
   transition: all .2s;
   border: 10px solid var(--c2);
   overflow: hidden;
-  background-color: var(--c2);
   background-clip: content-box
 }
 
