@@ -165,7 +165,6 @@ h1 {
 #stat {
   line-height: 1;
   letter-spacing: .1em;
-  font-weight: 300;
   z-index: 1;
   text-align: right;
   margin: .5em;
@@ -206,7 +205,8 @@ h1 {
 #wimg {
   overflow: hidden;
   filter: drop-shadow(0 0 1px #fff);
-  color: var(--c1)
+  color: var(--c1);
+  font-weight: 900;
 }
 
 #imag,
@@ -218,6 +218,7 @@ h1 {
 #seco {
   font-size: 3em;
   font-family: Numbers, Arial, Helvetica, sans-serif;
+  font-weight: 400;
   padding-top: 24px;
   line-height: 1
 }
