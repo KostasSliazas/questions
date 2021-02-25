@@ -54,6 +54,7 @@
       seco,
       imag
     }
+    G.elems.starBtn.removeEventListener('click', init)
   }
 
   function dataLoaded (data) {
@@ -66,15 +67,42 @@
     G.score = Number(readValue()[1]) || 0
     checkIsAllAnswered()
     updateStat()
+    G.elems.star.innerText = ''
     G.elems.scor.innerText = G.score
     G.elems.starBtn.innerText = (G.quest > 0) ? 'continue' : 'start'
     G.elems.starBtn.addEventListener('click', start)
+    G.elems.getMessage.classList.remove('hide') // always show div when init
   }
 
-  async function getData () {
-    const res = await w.fetch(G.URL)
-    const json = await res.json()
-    dataLoaded(json)
+  // async function getData () {
+  //   const res = await w.fetch(G.URL)
+  //   const json = await res.json()
+  //   console.log(res)
+  //   if (res.ok) {
+  //     console.log('dd')
+  //     dataLoaded(json)
+  //   } else {
+  //     console.log('fff')
+  //   }
+  // }
+  function getData () {
+    w.fetch(G.URL).then((response) => {
+      if (response.ok) {
+        return response.json()
+      } else {
+        throw new Error('Something went wrong')
+      }
+    })
+      .then((responseJson) => {
+        dataLoaded(responseJson)
+      })
+      .catch((error) => {
+        G.elems.star.innerText = 'Error: ' + error
+        G.elems.starBtn.innerText = 'Retry'
+        G.elems.starBtn.addEventListener('click', init)
+        G.elems.getMessage.classList.remove('hide')
+        // console.log(error)
+      })
   }
 
   function start () {
@@ -321,16 +349,4 @@
     if (document.getElementById('theme').checked) return true
     return false
   }
-  // function CheckError (response) {
-  //   if (response.status >= 200 && response.status <= 299) {
-  //     return response.json()
-  //   } else {
-  //     throw Error(response.statusText)
-  //   }
-  // }
-  // fetch data from URL
-
-  // w.fetch(G.URL)
-  //   .then(CheckError)
-  //   .then((json) => dataLoaded(json))
 })(window, document)

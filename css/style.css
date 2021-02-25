@@ -100,7 +100,7 @@
   font-size: 12px;
   line-height: 24px;
   color: var(--c3);
-  z-index: 999
+  z-index: 8
 }
 
 #loader::after {
@@ -261,7 +261,7 @@ h1 {
 }
 
 #mess {
-  height: 240px;
+  min-height: 240px;
   width: 300px;
   display: block;
   text-align: center;
@@ -311,7 +311,8 @@ h1 {
 }
 
 #starBtn {
-  min-width: 10em
+  min-width: 10em;
+  margin: 1em;
 }
 
 #main .btn.tips {
