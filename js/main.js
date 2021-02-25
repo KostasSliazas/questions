@@ -58,6 +58,7 @@
   }
 
   function dataLoaded (data) {
+    G.elems.star.innerText = ''
     G.fdata = data.results // set data to (d = document) as global variable
     G.elems.loader.style.display = 'none' // when loaded data hide loader (spiner)
     if (!readValue()[0]) { // read localStorage if there is none show message becouse it's string it will be NOT falsy
@@ -67,7 +68,6 @@
     G.score = Number(readValue()[1]) || 0
     checkIsAllAnswered()
     updateStat()
-    G.elems.star.innerText = ''
     G.elems.scor.innerText = G.score
     G.elems.starBtn.innerText = (G.quest > 0) ? 'continue' : 'start'
     G.elems.starBtn.addEventListener('click', start)
