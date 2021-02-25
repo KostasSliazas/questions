@@ -74,17 +74,6 @@
     G.elems.getMessage.classList.remove('hide') // always show div when init
   }
 
-  // async function getData () {
-  //   const res = await w.fetch(G.URL)
-  //   const json = await res.json()
-  //   console.log(res)
-  //   if (res.ok) {
-  //     console.log('dd')
-  //     dataLoaded(json)
-  //   } else {
-  //     console.log('fff')
-  //   }
-  // }
   function getData () {
     w.fetch(G.URL).then((response) => {
       if (response.ok) {
@@ -135,6 +124,10 @@
     const qu = new CreateElem('div', 'q', 'q', decodeEntities(question)) // questions adding
     G.elems.getQuestio.appendChild(qu)
     G.elems.getMainDiv.addEventListener('click', loopElems) // add event listener to answers
+    w.setTimeout(() => {
+      // document.body.style.cursor = 'default'
+      G.elems.getMainDiv.style.pointerEvents = 'auto'
+    }, 1200)
   }
 
   // when clicked answer load this function
@@ -153,8 +146,9 @@
         yyes.call(element)
       }
       element.disabled = true
-      element.style.pointerEvents = 'none'
     })
+    G.elems.getMainDiv.style.pointerEvents = 'none'
+    // document.body.style.cursor = 'wait'
 
     const answ = document.getElementById('id' + G.trueA)
     if (elem.target.id === G.trueA) {
