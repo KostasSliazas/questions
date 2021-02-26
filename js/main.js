@@ -63,6 +63,8 @@
     G.elems.loader.style.display = 'none' // when loaded data hide loader (spiner)
     if (!readValue()[0]) { // read localStorage if there is none show message becouse it's string it will be NOT falsy
       G.elems.star.innerHTML = 'This game is using <a href="https://en.wikipedia.org/wiki/Web_storage#Local_and_session_storage" target="_blank" rel="noopener noreferrer">localStorage</a>.'
+    } else {
+      G.elems.star.innerHTML = 'Welcome back'
     }
     G.quest = Number(readValue()[0]) || 0
     G.score = Number(readValue()[1]) || 0
