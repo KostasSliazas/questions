@@ -34,8 +34,7 @@
   --c3: #D3C3FB;
   --c4: #7F60C9;
   --c5: #A68BE8;
-  --BRadius: 10px;
-  --BRadius2: 30px;
+  --BRadius: 4px;
   --BShadowC1: 0 0 0 1px #000;
   --BShadowC2: 0 0 0 1px var(--c2) inset;
   --BShadowC3: 0 0 2px 2px rgba(0, 0, 0, 0.3);
@@ -270,8 +269,8 @@ h1 {
   top: 50%;
   margin-left: -150px;
   margin-top: -120px;
-  -webkit-border-radius: var(--BRadius2);
-  border-radius: var(--BRadius2);
+  -webkit-border-radius: var(--BRadius);
+  border-radius: var(--BRadius);
   z-index: 9;
   transition: all .2s;
   border: 10px solid var(--c2);
