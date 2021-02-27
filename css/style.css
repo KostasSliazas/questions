@@ -37,7 +37,7 @@
   --BRadius: 10px;
   --BRadius2: 30px;
   --BShadowC1: 0 0 0 1px #000;
-  --BShadowC2: 0 0 0 1px var(--c4) inset;
+  --BShadowC2: 0 0 0 1px var(--c2) inset;
   --BShadowC3: 0 0 2px 2px rgba(0, 0, 0, 0.3);
   --H1color: var(--c5);
   --BgColor1: var(--c1);
@@ -490,6 +490,7 @@ a {
 #mess,
 #ques,
 #wrap,
+#wimg,
 .btn {
   box-shadow: var(--BShadowC1), var(--BShadowC2), var(--BShadowC3)
 }
