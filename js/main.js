@@ -127,9 +127,9 @@
     G.elems.getQuestio.appendChild(qu)
     G.elems.getMainDiv.addEventListener('click', loopElems) // add event listener to answers
     w.setTimeout(() => {
-      // document.body.style.cursor = 'default'
+      document.body.style.cursor = 'default'
       G.elems.getMainDiv.style.pointerEvents = 'auto'
-    }, 1200)
+    }, 1000)
   }
 
   // when clicked answer load this function
@@ -150,7 +150,7 @@
       element.disabled = true
     })
     G.elems.getMainDiv.style.pointerEvents = 'none'
-    // document.body.style.cursor = 'wait'
+    document.body.style.cursor = 'wait'
 
     const answ = document.getElementById('id' + G.trueA)
     if (elem.target.id === G.trueA) {
@@ -208,7 +208,7 @@
         updateStat()
         G.elems.getQuestio.className = 'bg'
       }
-    }, 1500)
+    }, 500)
   }
   // remove elements
   function remElements (elementId) {

@@ -340,15 +340,15 @@ h1 {
 .tips.nno:nth-of-type(odd),
 .tips.yyes:nth-of-type(odd) {
   transform: translateX(-122%);
-  transition-duration: .2s;
-  transition-delay: 1.2s
+  transition-duration: .1s;
+  transition-delay: 1s
 }
 
 .tips.nno:nth-of-type(even),
 .tips.yyes:nth-of-type(even) {
   transform: translateX(122%);
-  transition-duration: .2s;
-  transition-delay: 1.2s
+  transition-duration: .1s;
+  transition-delay: 1s
 }
 
 .tips:not(.sele).yyes {
@@ -389,27 +389,27 @@ h1 {
 }
 
 .tips:nth-of-type(1) {
-  transition: transform .2s linear .1s
+  transition: transform .2s linear .0s
 }
 
 .tips:nth-of-type(2) {
-  transition: transform .2s linear .2s
+  transition: transform .2s linear .1s
 }
 
 .tips:nth-of-type(3) {
-  transition: transform .2s linear .3s
+  transition: transform .2s linear .2s
 }
 
 .tips:nth-of-type(4) {
-  transition: transform .2s linear .4s
+  transition: transform .2s linear .3s
 }
 
 .tips:nth-of-type(5) {
-  transition: transform .2s linear .5s
+  transition: transform .2s linear .4s
 }
 
 .tips:nth-of-type(6) {
-  transition: transform .2s linear .6s
+  transition: transform .2s linear .5s
 }
 
 .bg,
