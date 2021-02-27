@@ -4,7 +4,7 @@
   }
 
   to {
-    background-color: var(--colorYD)
+    background-color: var(--c1)
   }
 }
 
@@ -14,7 +14,7 @@
   }
 
   to {
-    background-color: var(--colorYD)
+    background-color: var(--c1)
   }
 }
 
@@ -340,20 +340,20 @@ h1 {
 .tips.nno:nth-of-type(odd),
 .tips.yyes:nth-of-type(odd) {
   transform: translateX(-122%);
-  transition-duration: .1s;
+  transition-duration: .2s;
   transition-delay: 1s
 }
 
 .tips.nno:nth-of-type(even),
 .tips.yyes:nth-of-type(even) {
   transform: translateX(122%);
-  transition-duration: .1s;
+  transition-duration: .2s;
   transition-delay: 1s
 }
 
 .tips:not(.sele).yyes {
-  -webkit-animation: backgrnd .2s alternate infinite;
-  animation: backgrnd .2s alternate infinite
+  -webkit-animation: backgrnd .5s steps(2) infinite;
+  animation: backgrnd .5s steps(2) infinite
 }
 
 .tips:nth-of-type(odd).trans {

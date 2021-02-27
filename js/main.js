@@ -99,7 +99,7 @@
   function start () {
     hide.call(G.elems.getMessage) // hide message
     addQuestions()
-    setTimeout(show, 500)
+    setTimeout(show, 300)
     updateStat()
     G.elems.scor.innerText = G.score
   }
@@ -204,11 +204,11 @@
         remElements('q')
         remElements('main')
         addQuestions()
-        setTimeout(show, 500)
+        setTimeout(show, 300)
         updateStat()
         G.elems.getQuestio.className = 'bg'
       }
-    }, 500)
+    }, 1100)
   }
   // remove elements
   function remElements (elementId) {
