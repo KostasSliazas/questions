@@ -479,6 +479,7 @@ a {
   margin: 1em;
 }
 
+.theme,
 #header,
 #mess,
 #ques,
@@ -488,84 +489,61 @@ a {
   box-shadow: var(--BShadowC1), var(--BShadowC2), var(--BShadowC3)
 }
 
-#theme {
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+.soun {
+  position: absolute;
+  right: .5em;
+  bottom: .5em;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.theme {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
   cursor: pointer;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  height: 47px;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  right: .5em;
-  margin: 0;
+  isolation: isolate;
+  height: 24px;
+  width: 52px;
+  border-radius: var(--BRadius);
+  overflow: hidden;
   outline: 0;
+  position: relative;
+  z-index: 1;
+  background: var(--c1);
+  color: var(--c3);
+}
+
+.theme::after {
+  background: var(--c2);
+  border-radius: var(--BRadius);
+  content: '';
+  height: 100%;
+  left: 0;
   position: absolute;
-  bottom: .5em;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  width: 47px;
-  z-index: 2;
+  top: 0;
+  transform: translate3d(0, 0, 0);
+  transition: transform .1s ease-in-out;
+  width: 50%;
+  box-shadow: 0 0 1px var(--c3) inset;
 }
 
-#theme::after {
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  border-radius: 50%;
-  border: 2px dotted transparent;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-  content: "";
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  height: 28px;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-transition: .4s .2s border-color;
-  transition: .4s .2s border-color;
-  width: 28px;
+.theme:checked::after {
+  transform: translate3d(100%, 0, 0);
+  background: var(--c3);
 }
 
-#theme::before {
-  background: 0 0;
-  border-left: 2px solid currentColor;
-  border-radius: 50%;
-  border-bottom: 2px solid currentColor;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-  content: "sound off";
-  height: 18px;
-  -webkit-transition: .4s background-color;
-  transition: .4s background-color;
-  width: 18px;
+.theme::before {
+  content: 'on off';
   position: absolute;
-  line-height: 18px;
-  text-indent: 30px;
-  direction: rtl;
-}
-
-#theme:checked::after {
-  border-color: currentColor;
-}
-
-#theme:checked::before {
-  background: currentColor;
-  content: "sound on";
-}
-
-#theme:checked~.wrapper {
-  opacity: .2;
+  top: 0;
+  left: 0;
+  font-size: 14px;
+  word-spacing: 4px;
+  line-height: 24px;
+  text-align: center;
+  width: 100%;
 }
 
 @media screen and (min-width:768px) {
