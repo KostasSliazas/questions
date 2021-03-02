@@ -314,6 +314,7 @@ h1 {
 #main .btn.tips {
   text-align: left;
   overflow: auto;
+  height: 100%;
   will-change: transform, background-color;
   padding-left: 3.5em
 }
