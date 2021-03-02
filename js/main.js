@@ -158,12 +158,12 @@
       createItem(G.quest, G.score)
       sele.bind(answ)
       yyes.call(G.elems.getQuestio)
-      if (checkIsChecked('vibr')) w.navigator.vibrate(50) // vibrate for true answer
+      if (checkIsChecked('vibr')) w.navigator.vibrate(20) // vibrate for true answer
       if (checkIsChecked('soun')) SNDTRUE.play()
     } else {
       nno.call(G.elems.getQuestio)
       nno.bind(answ)
-      if (checkIsChecked('vibr')) w.navigator.vibrate(100) // vibrate for wrong answer
+      if (checkIsChecked('vibr')) w.navigator.vibrate(60) // vibrate for wrong answer
       if (checkIsChecked('soun')) SNDFALSE.play()
     }
     nextQuest()
