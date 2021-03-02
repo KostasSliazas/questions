@@ -247,9 +247,9 @@ h1 {
   align-content: center;
   -webkit-box-align: center;
   -webkit-align-items: center;
+  align-items: center;
   -ms-flex-align: center;
-  align-items: baseline;
-  padding: 1em 1em 3em;
+  padding: 1em;
   overflow: hidden;
   gap: 1em
 }
@@ -489,16 +489,19 @@ a {
 .btn {
   box-shadow: var(--BShadowC1), var(--BShadowC2), var(--BShadowC3)
 }
-
-.soun {
-  position: absolute;
-  right: .5em;
-  bottom: .5em;
-  display: flex;
-  flex-direction: column;
-  text-align: center;
+.efec{
+bottom: .5em;
+display: flex;
+flex-direction: column;
+text-align: center;
+position: absolute;
 }
-
+.soun {
+  right: .5em;
+}
+.vibr {
+  left: .5em;
+}
 .theme {
   -webkit-appearance: none;
   -moz-appearance: none;

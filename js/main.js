@@ -138,6 +138,7 @@
     if (!elem.target.classList.contains('tips')) return false
     clearTimeout(G.tim)
     sele.call(elem.target) // add class user selected answer
+    if (checkIsChecked('vibr')) w.navigator.vibrate(10) // vibrate for wrong answer
     G.elems.getMainDiv.removeEventListener('click', loopElems) // remove event listener to answers
 
     const getAllansw = [...document.getElementsByClassName('tips')] // loop elements and add classes
@@ -158,13 +159,13 @@
       createItem(G.quest, G.score)
       sele.bind(answ)
       yyes.call(G.elems.getQuestio)
-      w.navigator.vibrate(20) // vibrate for true answer
-      if (checkIsSoundOn()) SNDTRUE.play()
+      if (checkIsChecked('vibr')) w.navigator.vibrate(30) // vibrate for true answer
+      if (checkIsChecked('soun')) SNDTRUE.play()
     } else {
       nno.call(G.elems.getQuestio)
       nno.bind(answ)
-      w.navigator.vibrate(100) // vibrate for wrong answer
-      if (checkIsSoundOn()) SNDFALSE.play()
+      if (checkIsChecked('vibr')) w.navigator.vibrate(80) // vibrate for wrong answer
+      if (checkIsChecked('soun')) SNDFALSE.play()
     }
     nextQuest()
   }
@@ -341,8 +342,8 @@
     }
   }
 
-  function checkIsSoundOn () {
-    if (document.getElementById('theme').checked) return true
+  function checkIsChecked (id) {
+    if (document.getElementById(id).checked) return true
     return false
   }
 })(window, document)
