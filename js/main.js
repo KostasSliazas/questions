@@ -138,7 +138,6 @@
     if (!elem.target.classList.contains('tips')) return false
     clearTimeout(G.tim)
     sele.call(elem.target) // add class user selected answer
-    if (checkIsChecked('vibr')) w.navigator.vibrate(20) // vibrate for wrong answer
     G.elems.getMainDiv.removeEventListener('click', loopElems) // remove event listener to answers
 
     const getAllansw = [...document.getElementsByClassName('tips')] // loop elements and add classes
