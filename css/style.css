@@ -29,19 +29,19 @@
 }
 
 :root {
-  --c1: #2B3B47;
-  --c2: #5D7C88;
-  --c3: #D3CFC2;
-  --c4: #08AEAA;
-  --c5: #AABB9B;
+  --c1: #3B6888;
+  --c2: #738398;
+  --c3: #F0EFF4;
+  --c4: #6FB0C9;
+  --c5: #96A0C4;
   --BRadius: 4px;
   --BShadowC1: 0 0 0 1px #000;
   --BShadowC2: 0 0 0 1px var(--c2) inset;
   --BShadowC3: 0 0 2px 2px rgba(0, 0, 0, 0.3);
-  --colorYE: #08AEAA;
-  --colorYD: #5D7C88;
-  --colorNo: #E26500;
-  --colorNoSe: #B14E00;
+  --colorYE: #046594;
+  --colorYD: #3B6888;
+  --colorNo: #781426;
+  --colorNoSe: #50000E;
 }
 
 @font-face {
@@ -458,12 +458,10 @@ a {
 
 .nno {
   background: var(--colorNo);
-  color: var(--c1);
 }
 
 .yyes {
   background: var(--colorYE);
-  color: var(--c1);
 }
 
 #header {
