@@ -436,7 +436,8 @@ a {
 .btn:focus:enabled,
 .btn:hover:enabled,
 .btn:hover:enabled::before {
-  background: linear-gradient(to top, var(--c1) 90%, var(--c2) 100%);
+  background: linear-gradient(to top, var(--c2) 90%, var(--c3) 100%);
+  color: #eee;
 }
 
 .btn:focus {
