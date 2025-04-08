@@ -1,7 +1,6 @@
 # Questions Game
 
-**Questions** is a web-based trivia game that challenges players with a series of questions. Test your knowledge and aim for the highest score!
-
+**Questions** is a web-based trivia game that challenges players with a series of questions. Test your knowledge and aim for the highest score! The project uses an external source to fetch questions from https://opentdb.com/, so an internet connection is required."
 ## Features
 
 - **10 Questions**: Answer a set of 10 questions per game.
